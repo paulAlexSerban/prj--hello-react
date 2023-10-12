@@ -1,0 +1,31 @@
+{
+    "name": "@wbk--test-driven-development-typescript/core",
+    "version": "0.1.0",
+    "main": "index.js",
+    "repository": "https://github.com/paulAlexSerban/wbk--test-driven-development-typescript.git",
+    "author": "paulAlexSerban <paul.alex.serban@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "formats:check": "yarn prettier --check .",
+        "formats:write": "yarn prettier --write ."
+    },
+    "private": true,
+    "workspaces": {
+        "packages": [
+            "assets/*",
+            "packages/*",
+            "frontend/*",
+            "backend/*"
+        ],
+        "nohoist": [
+            "**/normalize-scss"
+        ]
+    },
+    "devDependencies": {
+        "husky": "^8.0.3"
+    },
+    "dependencies": {
+        "lerna": "^7.3.0",
+        "prettier": "^3.0.3"
+    }
+}
