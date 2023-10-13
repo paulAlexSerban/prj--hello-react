@@ -1,6 +1,5 @@
 import { toUpperCase, stringInfo, getStringInfo } from '../app/Utils';
 
-
 describe('Utils test suite', () => {
     it('should return upper case of a valid string', () => {
         // Arrange
@@ -26,7 +25,7 @@ describe('Utils test suite', () => {
         };
         // Act
         const actual = SUT('hello');
-        
+
         // Assert
         expect(actual.lowerCase).toEqual(expected.lowerCase);
         expect(actual.upperCase).toEqual(expected.upperCase);
@@ -39,7 +38,6 @@ describe('Utils test suite', () => {
         expect(actual.characters).toContain<string>('h');
         expect(actual.characters).toEqual(expect.arrayContaining<string>(['h', 'e', 'l', 'l', 'o']));
 
-
         expect(actual.length).toEqual(expected.length);
 
         expect(actual.extraInfo).not.toBe(undefined);
@@ -47,5 +45,5 @@ describe('Utils test suite', () => {
         expect(actual.extraInfo).toBeDefined();
         expect(actual.extraInfo).toBeTruthy();
         expect(actual.characters).not.toBeNull();
-    })
+    });
 });
