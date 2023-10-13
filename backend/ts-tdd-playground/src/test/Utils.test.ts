@@ -18,6 +18,25 @@ describe('Utils test suite', () => {
      * use .toEqual() for object types
      */
 
+    /**
+     * Parameterized tests
+     */
+    describe('ToUpperCase parametrized tests', () => {
+        it.each([
+            { input: 'hello', expected: 'HELLO' },
+            { input: 'world', expected: 'WORLD' },
+            { input: 'hello world', expected: 'HELLO WORLD' },
+            { input: 'my name is john', expected: 'MY NAME IS JOHN' },
+        ])('$input toUpperCase should be $expected', ({ input, expected }) => {
+            // Arrange - SUT = System Under Test
+            const SUT = toUpperCase;
+            // Act
+            const actual = SUT(input);
+            // Assert
+            expect(actual).toEqual(expected);
+        });
+    });
+
     describe("getStringInfo for argument 'hello'", () => {
         test('return right length', () => {
             // Arrange - SUT = System Under Test
@@ -55,14 +74,13 @@ describe('Utils test suite', () => {
         });
 
         test('return characters contains right right character', () => {
-          // Arrange - SUT = System Under Test
-          const SUT = getStringInfo;
-          // Act
-          const actual = SUT('hello');
-          // Assert
-          expect(actual.characters).toContain<string>('h');
-      });
-        
+            // Arrange - SUT = System Under Test
+            const SUT = getStringInfo;
+            // Act
+            const actual = SUT('hello');
+            // Assert
+            expect(actual.characters).toContain<string>('h');
+        });
 
         test('return defined extraInfo', () => {
             // Arrange - SUT = System Under Test
@@ -74,19 +92,19 @@ describe('Utils test suite', () => {
         });
 
         test('return expected string info', () => {
-          // Arrange - SUT = System Under Test
-          const SUT = getStringInfo;
-          const expected: stringInfo = {
-            lowerCase: 'hello',
-            upperCase: 'HELLO',
-            characters: ['h', 'e', 'l', 'l', 'o'],
-            length: 5,
-            extraInfo: {},
-        };
-          // Act
-          const actual = SUT('hello');
-          // Assert
-          expect(actual.extraInfo).toEqual(expected.extraInfo);
-      });
+            // Arrange - SUT = System Under Test
+            const SUT = getStringInfo;
+            const expected: stringInfo = {
+                lowerCase: 'hello',
+                upperCase: 'HELLO',
+                characters: ['h', 'e', 'l', 'l', 'o'],
+                length: 5,
+                extraInfo: {},
+            };
+            // Act
+            const actual = SUT('hello');
+            // Assert
+            expect(actual.extraInfo).toEqual(expected.extraInfo);
+        });
     });
 });
