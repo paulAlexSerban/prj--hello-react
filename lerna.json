@@ -2,7 +2,7 @@
     "$schema": "node_modules/lerna/schemas/lerna-schema.json",
     "version": "independent",
     "granularPathspec": false,
-    "packages": ["packages/*", "playground/*"],
+    "packages": ["assets/*", "packages/*", "frontend/*", "backend/*"],
     "npmClient": "yarn",
     "stream": true,
     "command": {
