@@ -1,6 +1,5 @@
 import { toUpperCase, stringInfo, getStringInfo, StringUtils } from '../app/Utils';
 
-
 describe('Utils test suite', () => {
     describe('StringUtils tests', () => {
         let SUT: StringUtils;
@@ -24,21 +23,21 @@ describe('Utils test suite', () => {
             expect(actual).toThrowError('invalid string');
         });
 
-        it("should throw and error on invalid string", (done) => {
-            const expectError = () => SUT.toUpperCase("");
+        it('should throw and error on invalid string', (done) => {
+            const expectError = () => SUT.toUpperCase('');
             // classic way
-            expect(expectError).toThrowError("invalid string");
+            expect(expectError).toThrowError('invalid string');
             expect(expectError).toThrow();
             // arrow function way
-            expect(() => SUT.toUpperCase("")).toThrow();
+            expect(() => SUT.toUpperCase('')).toThrow();
 
             //try...catch way
             try {
-                SUT.toUpperCase("");
-                done("should throw an error");
+                SUT.toUpperCase('');
+                done('should throw an error');
             } catch (error) {
                 expect(error).toBeInstanceOf(Error);
-                expect(error).toHaveProperty("message", "invalid string");
+                expect(error).toHaveProperty('message', 'invalid string');
                 // becuase we used done() we need to call it, else the test will timeout
                 done();
             }
