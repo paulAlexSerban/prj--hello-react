@@ -1,3 +1,9 @@
+export class StringUtils {
+    public toUpperCase(str: string): string {
+        return str.toUpperCase();
+    }
+}
+
 export const toUpperCase = (str: string): string => {
     return str.toUpperCase();
 };
