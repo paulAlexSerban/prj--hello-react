@@ -5,12 +5,7 @@ const config: Config.InitialOptions = {
     testEnvironment: 'node',
     verbose: true,
     collectCoverage: true,
-    collectCoverageFrom: [
-        'src/**/*.ts',
-        '!src/**/*.test.ts',
-        '!src/**/*.spec.ts',
-        '!src/**/index.ts',
-    ],
+    collectCoverageFrom: ['src/**/*.ts', '!src/**/*.test.ts', '!src/**/*.spec.ts', '!src/**/index.ts'],
     coverageDirectory: 'coverage',
     coverageReporters: ['text', 'lcov', 'clover'],
     coverageThreshold: {
