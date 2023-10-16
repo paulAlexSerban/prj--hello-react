@@ -8,7 +8,8 @@
     "scripts": {
         "formats:check": "yarn prettier --check .",
         "formats:write": "yarn prettier --write .",
-        "test": "yarn lerna run test --stream --parallel"
+        "test": "yarn lerna run test --stream --parallel",
+        "test:watch": "yarn lerna run test:watch --stream --parallel"
     },
     "private": true,
     "workspaces": {

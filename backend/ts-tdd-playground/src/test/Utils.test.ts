@@ -1,29 +1,56 @@
 import { toUpperCase, stringInfo, getStringInfo, StringUtils } from '../app/Utils';
 
+
 describe('Utils test suite', () => {
     describe('StringUtils tests', () => {
-
         let SUT: StringUtils;
 
         beforeEach(() => {
             console.log('[ setup ] mocking dependencies');
             SUT = new StringUtils();
-        })
+        });
 
         afterEach(() => {
             // clearing mocks
             console.log('[ teardown ] clearing mocks');
-        })
+        });
+
+        it('should throw error on invalid string', () => {
+            // Arrange
+            const SUT = new StringUtils();
+            // Act
+            const actual = () => SUT.toUpperCase('');
+            // Assert
+            expect(actual).toThrowError('invalid string');
+        });
+
+        it("should throw and error on invalid string", (done) => {
+            const expectError = () => SUT.toUpperCase("");
+            // classic way
+            expect(expectError).toThrowError("invalid string");
+            expect(expectError).toThrow();
+            // arrow function way
+            expect(() => SUT.toUpperCase("")).toThrow();
+
+            //try...catch way
+            try {
+                SUT.toUpperCase("");
+                done("should throw an error");
+            } catch (error) {
+                expect(error).toBeInstanceOf(Error);
+                expect(error).toHaveProperty("message", "invalid string");
+                // becuase we used done() we need to call it, else the test will timeout
+                done();
+            }
+        });
 
         it('should return ok upperCase', () => {
             const actual = SUT.toUpperCase('abc');
 
             console.log('[ test ] asserting');
             expect(actual).toBe('ABC');
-        })
-    })
-
-
+        });
+    });
 
     it('should return upper case of a valid string', () => {
         // Arrange
