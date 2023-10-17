@@ -10,7 +10,7 @@
         "formats:write": "yarn prettier --write .",
         "test": "yarn lerna run test --stream --parallel",
         "test:watch": "yarn lerna run test:watch --stream --parallel",
-        "test:watch:pw-check":"lerna run test:watch --scope=@wbk--test-driven-development-typescript/password-checker"
+        "test:watch:pw-check": "lerna run test:watch --scope=@wbk--test-driven-development-typescript/password-checker"
     },
     "private": true,
     "workspaces": {

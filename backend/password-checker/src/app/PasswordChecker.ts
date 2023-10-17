@@ -53,9 +53,9 @@ export class PasswordChecker {
         }
     }
 
-    private checkForNumber(password: string, reasons: PasswordErrors[]){
-        const hasNumber = /\d/; 
-        if(!hasNumber.test(password)) {
+    private checkForNumber(password: string, reasons: PasswordErrors[]) {
+        const hasNumber = /\d/;
+        if (!hasNumber.test(password)) {
             reasons.push(PasswordErrors.NO_NUMBER);
         }
     }
@@ -67,8 +67,7 @@ export class PasswordChecker {
         return {
             password,
             valid: basicCheck.reasons.length > 0 ? false : true,
-            reasons: basicCheck.reasons
+            reasons: basicCheck.reasons,
         };
     }
 }
-

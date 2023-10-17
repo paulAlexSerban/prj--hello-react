@@ -53,5 +53,5 @@ describe('PassowrdChecker test suite', () => {
         const actual = SUT.checkAdminPassword('adminABCD123');
         expect(actual.valid).toBe(true);
         expect(actual.reasons).not.toContain(PasswordErrors.NO_NUMBER);
-    })
+    });
 });
