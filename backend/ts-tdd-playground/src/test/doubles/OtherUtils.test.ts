@@ -25,10 +25,10 @@ describe('OtherUtils test suite', () => {
         test('use spy to replace the implementation of a method', () => {
             // using `as any` is a hack to tell the compiler to ignore the type of the object
             // NOTE it is a bad practice
-            const externalServiceSpy = jest.spyOn(SUT as any, 'callExternalServiceMethod').mockImplementation(() => {
+            const externalServiceSpy = jest.spyOn(SUT as any, 'callExternalService').mockImplementation(() => {
                 console.log('called mock implementation');
             });
-            (SUT as any).callExternalServiceMethod();
+            (SUT as any).callExternalService();
         });
     });
 
